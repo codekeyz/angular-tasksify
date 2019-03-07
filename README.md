@@ -1,3 +1,3 @@
 # Angular Tasksify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+Check out this project at [Angular Tasksify](https://fremerinc.github.io/angular-tasksify/).
