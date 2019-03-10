@@ -1,0 +1,14 @@
+<div>
+  <input
+    [style.width]="value.trim().length <= 0 ? '100%' : '80%'"
+    [class.no-border]="value.trim().length === 0"
+    [(ngModel)]="value"
+    name="input"
+    type="text"
+    [placeholder]="placeholder"
+    required="required"
+  />
+  <span class="addBtn" (click)="sendInput()" *ngIf="value.trim().length > 0"
+    >Add</span
+  >
+</div>
