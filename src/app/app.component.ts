@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from './components/item-list/item-list.component';
+import { DataService } from './providers/data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,12 @@ import { Task } from './components/item-list/item-list.component';
 export class AppComponent implements OnInit {
   tasks: Task[] = [];
 
+  constructor(private dataSvc: DataService) {}
+
   ngOnInit() {}
 
   addItem(title: string) {
-    this.tasks.push({
+    this.dataSvc.addTask({
       title
     });
   }
