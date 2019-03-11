@@ -1,3 +1,3 @@
 # Angular Tasksify
 
-Check out this project at [Angular Tasksify](https://fremerinc.github.io/angular-tasksify/).
+Check out this project at [Fremer Tasksify](https://fremer-tasksify.netlify.com/).
