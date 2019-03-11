@@ -1,0 +1,6 @@
+<ul id="myList">
+  <app-item
+    *ngFor="let item of (tasks$ | async)"
+    [title]="item.title"
+  ></app-item>
+</ul>
