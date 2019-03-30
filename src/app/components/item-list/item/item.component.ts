@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-item',
@@ -8,9 +8,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ItemComponent implements OnInit {
   @Input() title: string;
 
-  @Input() checked = false;
+  checked = false;
+
+  @Output() delete = new EventEmitter<any>();
+
+  @Output() check = new EventEmitter<any>();
 
   constructor() {}
 
   ngOnInit() {}
+
+  clicked() {
+    this.checked = !this.checked;
+    this.check.emit(this.checked);
+  }
+
+  clickDelete() {
+    this.delete.emit();
+  }
 }

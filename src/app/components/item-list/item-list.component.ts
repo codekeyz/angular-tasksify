@@ -15,11 +15,13 @@ export interface Task {
 export class ItemListComponent implements OnInit {
   tasks$: Observable<Task[]>;
 
+  checkedList = {};
+
   constructor(private dataSvc: DataService) {}
 
   ngOnInit() {
-    // Create an observable of tasks that emits every 5sec
-    this.tasks$ = interval(5000).pipe(
+    // Create an observable of tasks that emits every 1sec
+    this.tasks$ = interval(1000).pipe(
       startWith(0),
       switchMap(() => of(this.dataSvc.getTasks())),
       distinctUntilChanged((x, y) => {
@@ -27,5 +29,13 @@ export class ItemListComponent implements OnInit {
         return JSON.stringify(x) === JSON.stringify(y);
       })
     );
+  }
+
+  deleteItem(index: number, task: Task) {
+    this.dataSvc.deleteTask(index, task);
+  }
+
+  itemChecked(index: number, item: Task) {
+    this.checkedList[index] = item;
   }
 }
