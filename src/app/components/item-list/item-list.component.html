@@ -1,6 +1,8 @@
 <ul id="myList">
   <app-item
-    *ngFor="let item of (tasks$ | async)"
+    (check)="itemChecked(i, item)"
+    *ngFor="let item of (tasks$ | async); let i = index"
     [title]="item.title"
+    (delete)="deleteItem(i, item)"
   ></app-item>
 </ul>

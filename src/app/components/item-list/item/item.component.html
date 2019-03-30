@@ -1,4 +1,4 @@
 <li [class.checked]="checked">
-  {{ title }}
-  <span class="delete">×</span>
+  <span (click)="clicked()">{{ title }}</span>
+  <span class="delete" (click)="clickDelete()">×</span>
 </li>
